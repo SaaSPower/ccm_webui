@@ -11,7 +11,7 @@
         <el-menu-item index="2-2">选项2</el-menu-item>
         <el-menu-item index="2-3">选项3</el-menu-item>
       </el-submenu>
-      <el-menu-item index="3"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
+      <el-menu-item index="3"><a href="https://www.ele.me" target="_blank">量表管理</a></el-menu-item>
       <el-submenu class="avatar" index="avatar">
         <template slot="title">
           <span>JKZING</span>
@@ -22,9 +22,7 @@
     <div class="breadcrumb-nav">
       <el-breadcrumb separator="/">
         <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-        <el-breadcrumb-item>活动管理</el-breadcrumb-item>
-        <el-breadcrumb-item>活动列表</el-breadcrumb-item>
-        <el-breadcrumb-item>活动详情</el-breadcrumb-item>
+        <el-breadcrumb-item>系统</el-breadcrumb-item>
       </el-breadcrumb>
     </div>
     <div class="container">
@@ -78,7 +76,7 @@ export default class App extends Vue {
 
 .container {
   min-width: 1000px;
-  padding: 0 20px;
+  padding: 20px;
   margin: 0 auto;
 }
 </style>

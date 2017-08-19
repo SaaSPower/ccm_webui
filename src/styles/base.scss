@@ -47,3 +47,13 @@ a {
 ::-webkit-scrollbar {
   display: none;
 }
+
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: "";
+}
+
+.clearfix:after {
+    clear: both
+}
