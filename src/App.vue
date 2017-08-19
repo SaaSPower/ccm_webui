@@ -51,29 +51,29 @@ export default class App extends Vue {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .header-menu {
   padding-right: 20px;
+
+  .avatar {
+    float: right;
+  }
+
+  .logo {
+    border-bottom: none!important;
+
+    img {
+      vertical-align: middle;
+      height: 40px;
+      cursor: pointer;
+    }
+  }
 }
 
 .breadcrumb-nav {
   background: #eff2f7;
   height: 43px;
   padding: 15px 20px;
-}
-
-.avatar {
-  float: right;
-}
-
-.logo {
-  border-bottom: none!important;
-}
-
-.logo img {
-  vertical-align: middle;
-  height: 40px;
-  cursor: pointer;
 }
 
 .container {
@@ -83,55 +83,8 @@ export default class App extends Vue {
 }
 </style>
 
-<style>
+<style lang="scss">
 .avatar .el-submenu__icon-arrow {
   display: none;
-}
-/* reset styles */
-html {
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-}
-
-body {
-    margin: 0 auto;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    font-size: 14px;
-    line-height: 1.5;
-    letter-spacing: 1.5px;
-    font-family: 'Hiragino Sans GB', 'Microsoft YaHei', 微软雅黑, STHeiti, 'WenQuanYi Micro Hei', SimSun, sans-serif;
-    color: #2c3e50;
-    overflow: hidden;
-    user-select: none;
-    -webkit-touch-callout: none;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-ul {
-    list-style: none;
-}
-
-input, select, textarea, button {
-    font-family: inherit;
-    outline: none;
-    border: 0;
-}
-
-a {
-    text-decoration: none;
-}
-
-::-webkit-scrollbar {
-    display: none;
 }
 </style>
