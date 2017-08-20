@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/pages/Home.vue'
 import System from '@/pages/System.vue'
+import Disease from '@/pages/Disease.vue'
 
 Vue.use(Router)
 
@@ -16,6 +17,11 @@ export default new Router({
       path: '/systems',
       name: 'System',
       component: System
+    },
+    {
+      path: '/disease/:uid',
+      name: 'Disease',
+      component: Disease
     }
   ]
 })
