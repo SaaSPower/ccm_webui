@@ -99,6 +99,7 @@ export default class System extends Vue{
 
 .system {
   padding: 10px;
+  background: $white;
 }
 
 .system-row {

@@ -97,7 +97,6 @@ export default class App extends Vue {
   min-height: 200px;
   margin: 15px;
   overflow: hidden;
-  background: $white;
   border-radius: 4px;
 }
 
