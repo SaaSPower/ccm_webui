@@ -62,7 +62,7 @@ export default class Disease extends Vue {
         }
       ],
       filterMultiple: false,
-      filterMethod(value, row) {
+      filterMethod (value, row) {
         if (value === 1) {
           return row.age > 18
         } else if (value === 2) {
@@ -109,10 +109,11 @@ export default class Disease extends Vue {
               click: () => {}
             }
           }, '记录')
-        ]);
+        ])
       }
     }
   ]
+
   patients: Array<any> = [
     {
       name: '王小明',

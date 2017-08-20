@@ -51,17 +51,17 @@ export default class App extends Vue {
   spanLeft: number = 5
   spanRight: number = 19
 
-  get iconSize() {
-    return this.spanLeft === 5 ? 14 : 24;
+  get iconSize () {
+    return this.spanLeft === 5 ? 14 : 24
   }
 
-  toggleClick() {
+  toggleClick () {
     if (this.spanLeft === 5) {
-      this.spanLeft = 2;
-      this.spanRight = 22;
+      this.spanLeft = 2
+      this.spanRight = 22
     } else {
-      this.spanLeft = 5;
-      this.spanRight = 19;
+      this.spanLeft = 5
+      this.spanRight = 19
     }
   }
 }
