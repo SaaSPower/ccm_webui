@@ -33,6 +33,12 @@ module.exports = {
         enforce: 'pre',
         include: [resolve('src'), resolve('test')],
         options: {
+          emitError: false,
+          // if not emit warning, cause webpack fail to compile
+          emitWarning: true,
+          failOnWarning: false,
+          failOnError: false,
+          useEslintrc: true
         }
       },
       {
