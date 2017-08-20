@@ -27,7 +27,7 @@
         <div class="layout-breadcrumb">
           <Breadcrumb>
             <Breadcrumb-item href="/">首页</Breadcrumb-item>
-            <Breadcrumb-item href="/system">系统</Breadcrumb-item>
+            <Breadcrumb-item href="/systems">系统</Breadcrumb-item>
           </Breadcrumb>
         </div>
         <div class="layout-content">
