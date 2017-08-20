@@ -89,7 +89,7 @@ export default class System extends Vue {
   }
 
   seeDetails () {
-
+    console.log('placeholder')
   }
 }
 </script>

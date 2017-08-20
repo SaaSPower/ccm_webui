@@ -1,25 +1,20 @@
-/* eslint-disable no-return-await, no-shadow */
-import * as types from '../mutation-types';
-// import { asyncEffect } from '../templates';
+import * as types from '../mutation-types'
 
-const state = {
-};
+const state = {}
 
-const getters = {
-};
+const getters = {}
 
-const actions = {
-};
+const actions = {}
 
 const mutations = {
-    [types.FETCH_SYSTEMS](state) {
-      console.log(state)
-    }
-};
+  [types.FETCH_SYSTEMS] (state) {
+    console.log(state)
+  }
+}
 
 export default {
-    state,
-    getters,
-    actions,
-    mutations,
-};
+  state,
+  getters,
+  actions,
+  mutations
+}

@@ -10,7 +10,7 @@ Vue.config.productionTip = false
 
 Vue.use(iView)
 
-/* eslint-disable no-new */
+// tslint:disable-next-line
 new Vue({
   el: '#app',
   router,

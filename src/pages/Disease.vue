@@ -97,7 +97,7 @@ export default class Disease extends Vue {
               marginRight: '5px'
             },
             on: {
-              click: () => {}
+              click: () => { console.log('placeholder') }
             }
           }, '编辑'),
           h('Button', {
@@ -106,7 +106,7 @@ export default class Disease extends Vue {
               size: 'small'
             },
             on: {
-              click: () => {}
+              click: () => { console.log('placeholder') }
             }
           }, '记录')
         ])

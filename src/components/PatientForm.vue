@@ -101,18 +101,18 @@ export default class PatientForm extends Vue {
     ]
   }
 
-  handleSubmit(name) {
+  handleSubmit (name) {
     (this.$refs[name] as any).validate((valid) => {
       if (valid) {
-        this.$Message.success('提交成功!');
+        this.$Message.success('提交成功!')
       } else {
-        this.$Message.error('表单验证失败!');
+        this.$Message.error('表单验证失败!')
       }
     })
   }
 
-  handleReset(name) {
-    (this.$refs[name] as any).resetFields();
+  handleReset (name) {
+    (this.$refs[name] as any).resetFields()
   }
 }
 </script>
