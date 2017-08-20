@@ -1,14 +1,14 @@
 import Vue from 'vue'
-import ElementUI from 'element-ui'
+import iView from 'iview'
 import store from './store'
 import App from './App.vue'
 import router from './router'
-import 'element-ui/lib/theme-default/index.css'
+import 'iview/dist/styles/iview.css'
 import './styles/base.scss'
 
 Vue.config.productionTip = false
 
-Vue.use(ElementUI)
+Vue.use(iView)
 
 /* eslint-disable no-new */
 new Vue({

@@ -1,88 +1,138 @@
 <template>
-  <div id="app">
-    <el-menu theme="dark" :default-active="activeIndex" class="header-menu" mode="horizontal" @select="handleSelect">
-      <el-menu-item class="logo" index="noop">
-        <img :src="logo" />
-      </el-menu-item>
-      <el-menu-item index="1">处理中心</el-menu-item>
-      <el-submenu index="2">
-        <template slot="title">我的工作台</template>
-        <el-menu-item index="2-1">选项1</el-menu-item>
-        <el-menu-item index="2-2">选项2</el-menu-item>
-        <el-menu-item index="2-3">选项3</el-menu-item>
-      </el-submenu>
-      <el-menu-item index="3"><a href="https://www.ele.me" target="_blank">量表管理</a></el-menu-item>
-      <el-submenu class="avatar" index="avatar">
-        <template slot="title">
-          <span>JKZING</span>
-        </template>
-        <el-menu-item index="profile-1">个人中心</el-menu-item>
-      </el-submenu>
-    </el-menu>
-    <div class="breadcrumb-nav">
-      <el-breadcrumb separator="/">
-        <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-        <el-breadcrumb-item>系统</el-breadcrumb-item>
-      </el-breadcrumb>
-    </div>
-    <div class="container">
-      <router-view></router-view>
-    </div>
+  <div class="layout" :class="{'layout-hide-text': spanLeft < 5}">
+    <row type="flex" class="container">
+      <i-col :span="spanLeft" class="layout-menu-left">
+        <Menu active-name="1" theme="dark" width="auto">
+          <div class="layout-logo-left"></div>
+          <Menu-item name="1">
+            <Icon type="ios-navigate" :size="iconSize"></Icon>
+            <span class="layout-text">选项 1</span>
+          </Menu-item>
+          <Menu-item name="2">
+            <Icon type="ios-keypad" :size="iconSize"></Icon>
+            <span class="layout-text">选项 2</span>
+          </Menu-item>
+          <Menu-item name="3">
+            <Icon type="ios-analytics" :size="iconSize"></Icon>
+            <span class="layout-text">选项 3</span>
+          </Menu-item>
+        </Menu>
+      </i-col>
+      <i-col :span="spanRight">
+        <div class="layout-header">
+          <i-button type="text" @click="toggleClick">
+            <Icon type="navicon" size="32"></Icon>
+          </i-button>
+        </div>
+        <div class="layout-breadcrumb">
+          <Breadcrumb>
+            <Breadcrumb-item href="#">首页</Breadcrumb-item>
+            <Breadcrumb-item href="#">应用中心</Breadcrumb-item>
+            <Breadcrumb-item>某应用</Breadcrumb-item>
+          </Breadcrumb>
+        </div>
+        <div class="layout-content">
+          <div class="layout-content-main">内容区域</div>
+        </div>
+        <div class="layout-copy">
+          2011-2016 &copy; SaaSPower
+        </div>
+      </i-col>
+    </Row>
   </div>
 </template>
-
 <script lang="ts">
 import Vue from 'vue'
 import Component from 'vue-class-component'
-const logo = require('./assets/logo.png')
 
 @Component({
   name: 'app'
 })
 export default class App extends Vue {
-  activeIndex: string = '0'
-  logo: string = logo
+  spanLeft: number = 5
+  spanRight: number = 19
 
-  handleSelect() {
+  get iconSize() {
+    return this.spanLeft === 5 ? 14 : 24;
+  }
 
+  toggleClick() {
+    if (this.spanLeft === 5) {
+      this.spanLeft = 2;
+      this.spanRight = 22;
+    } else {
+      this.spanLeft = 5;
+      this.spanRight = 19;
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.header-menu {
-  padding-right: 20px;
-
-  .avatar {
-    float: right;
-  }
-
-  .logo {
-    border-bottom: none!important;
-
-    img {
-      vertical-align: middle;
-      height: 40px;
-      cursor: pointer;
-    }
-  }
-}
-
-.breadcrumb-nav {
-  background: #eff2f7;
-  height: 43px;
-  padding: 15px 20px;
+.layout {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #d7dde4;
+  background: #f5f7f9;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
 }
 
 .container {
-  min-width: 1000px;
-  padding: 20px;
-  margin: 0 auto;
+  width: 100%;
+  height: 100%;
 }
-</style>
 
-<style lang="scss">
-.avatar .el-submenu__icon-arrow {
+.layout-breadcrumb {
+  padding: 10px 15px 0;
+}
+
+.layout-content {
+  min-height: 200px;
+  margin: 15px;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 4px;
+}
+
+.layout-content-main {
+  padding: 10px;
+}
+
+.layout-copy {
+  text-align: center;
+  padding: 10px 0 20px;
+  color: #9ea7b4;
+}
+
+.layout-menu-left {
+  background: #464c5b;
+}
+
+.layout-header {
+  height: 60px;
+  background: #fff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+}
+
+.layout-logo-left {
+  width: 90%;
+  height: 30px;
+  background: #5b6270;
+  border-radius: 3px;
+  margin: 15px auto;
+}
+
+.layout-ceiling-main a {
+  color: #9ba7b5;
+}
+
+.layout-hide-text .layout-text {
   display: none;
+}
+
+.ivu-col {
+  transition: width .2s ease-in-out;
 }
 </style>

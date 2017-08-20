@@ -1,28 +1,22 @@
 $theme-text: #2c3e50;
 
-$font-xxs: 12px; // extra extra small
-$font-xs: 13px; // extra small
-$font-s: 14px; // small
-$font-m: 16px; // medium
-$font-l: 18px; // large
-$font-xl: 20px; // extra large
+$font-s: 12px;
+$font-m: 14px;
+$font-l: 16px;
+$font-xl: 18px;
+$font-xxl: 20px;
 
-$color-primary-light: #58B7FF;
-$color-primary: #20A0FF;
-$color-primary-dark: #1D8CE0;
-$color-success: #13CE66;
-$color-waring: #F7BA2A;
-$color-danger: #FF4949;
+$color-primary-light: #5cadff;
+$color-primary: #2d8cf0;
+$color-primary-dark: #2b85e4;
+$color-success: #19be6b;
+$color-waring: #ff9900;
+$color-error: #ed3f14;
 
-$color-b: #1F2D3D; // black
-$color-lb: #324057; // light black
-$color-xlb: #475669; // extra light black
-
-$color-s: #8492A6; // silver
-$color-ls: #99A9BF; // light silver
-$color-xls: #C0CCDA; // extra light silver
-$color-g: #D3DCE6; // grey
-$color-lg: #E5E9F2; // light grey
-$color-xlg: #EFF2F7; // extra light grey
-$color-dw: #F9FAFC; // dark white
-$color-w: #FFFFFF; // white
+$color-title: #1c2438;
+$color-content: #495060;
+$color-sub: #80848f;
+$color-disabled: #bbbec4;
+$color-border: #dddee1;
+$color-divider: #e9eaec;
+$color-background: #f8f8f9;
