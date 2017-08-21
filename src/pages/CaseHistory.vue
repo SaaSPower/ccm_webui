@@ -28,9 +28,9 @@ import Vue from 'vue'
 import Component from 'vue-class-component'
 
 @Component({
-  name: 'system'
+  name: 'CaseHistory'
 })
-export default class System extends Vue {
+export default class CaseHistory extends Vue {
   movieList: Array<any> = [
     {
       name: '肖申克的救赎',

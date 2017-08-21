@@ -6,11 +6,11 @@
           <div class="layout-logo-left"></div>
           <Menu-item name="1">
             <Icon type="ios-navigate" :size="iconSize"></Icon>
-            <span class="layout-text">选项 1</span>
+            <span class="layout-text">病历管理</span>
           </Menu-item>
           <Menu-item name="2">
             <Icon type="ios-keypad" :size="iconSize"></Icon>
-            <span class="layout-text">选项 2</span>
+            <span class="layout-text">量表管理</span>
           </Menu-item>
           <Menu-item name="3">
             <Icon type="ios-analytics" :size="iconSize"></Icon>
@@ -26,8 +26,11 @@
         </div>
         <div class="layout-breadcrumb">
           <Breadcrumb>
-            <Breadcrumb-item href="/">首页</Breadcrumb-item>
-            <Breadcrumb-item href="/systems">系统</Breadcrumb-item>
+            <Breadcrumb-item
+              v-for="r in this.$route.matched"
+              :key="r.name"
+              :href="r.path"
+            >{{ r.meta.label }}</Breadcrumb-item>
           </Breadcrumb>
         </div>
         <div class="layout-content">
@@ -53,6 +56,10 @@ export default class App extends Vue {
 
   get iconSize () {
     return this.spanLeft === 5 ? 14 : 24
+  }
+
+  get breadcrumbs () {
+    return this.$route.matched.map(m => m.meta.label)
   }
 
   toggleClick () {

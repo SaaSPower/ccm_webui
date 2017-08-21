@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/pages/Home.vue'
-import System from '@/pages/System.vue'
+import CaseHistory from '@/pages/CaseHistory.vue'
 import Disease from '@/pages/Disease.vue'
 import Patient from '@/pages/Patient.vue'
+import RatingScale from '@/pages/RatingScale.vue'
 
 Vue.use(Router)
 
@@ -15,19 +16,42 @@ export default new Router({
       component: Home
     },
     {
-      path: '/systems',
-      name: 'System',
-      component: System
+      path: '/case_history',
+      name: 'CaseHistory',
+      component: { template: `<router-view></router-view>` },
+      meta: { label: '病历管理' },
+      children: [
+        {
+          path: '',
+          component: CaseHistory,
+          meta: { label: '系统' }
+        },
+        {
+          path: 'diseases/:diseaseUid',
+          name: 'Disease',
+          component: Disease,
+          meta: { label: '病种' },
+        },
+        {
+          path: 'patients/new',
+          name: 'Patient',
+          meta: { label: '新增病人' },
+          component: Patient
+        }
+      ]
     },
     {
-      path: '/diseases/:uid',
-      name: 'Disease',
-      component: Disease
-    },
-    {
-      path: '/patients/:uid',
-      name: 'Patient',
-      component: Patient
+      path: '/rating_scales',
+      name: 'RatingScalesList',
+      component: { template: `<router-view></router-view>` },
+      meta: { label: '量表管理' },
+      children: [
+        {
+          path: '',
+          component: RatingScale,
+          meta: { label: '所有量表' }
+        }
+      ]
     }
   ]
 })

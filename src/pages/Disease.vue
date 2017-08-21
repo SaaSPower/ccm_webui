@@ -26,7 +26,7 @@ import Component from 'vue-class-component'
 import PatientRow from '@/components/PatientRow.vue'
 
 @Component({
-  name: 'disease',
+  name: 'Disease',
   components: {
     PatientRow
   }
