@@ -5,6 +5,7 @@ import CaseHistory from '@/pages/CaseHistory.vue'
 import Disease from '@/pages/Disease.vue'
 import Patient from '@/pages/Patient.vue'
 import RatingScale from '@/pages/RatingScale.vue'
+import NewRatingScale from '@/pages/NewRatingScale.vue'
 
 Vue.use(Router)
 
@@ -30,7 +31,7 @@ export default new Router({
           path: 'diseases/:diseaseUid',
           name: 'Disease',
           component: Disease,
-          meta: { label: '病种' },
+          meta: { label: '病种' }
         },
         {
           path: 'patients/new',
@@ -41,7 +42,7 @@ export default new Router({
       ]
     },
     {
-      path: '/rating_scales',
+      path: '/rating_scale',
       name: 'RatingScalesList',
       component: { template: `<router-view></router-view>` },
       meta: { label: '量表管理' },
@@ -50,6 +51,11 @@ export default new Router({
           path: '',
           component: RatingScale,
           meta: { label: '所有量表' }
+        },
+        {
+          path: 'new',
+          component: NewRatingScale,
+          meta: { label: '创建量表' }
         }
       ]
     }
