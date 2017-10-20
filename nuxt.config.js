@@ -4,11 +4,11 @@ module.exports = {
     baseUrl: process.env.BASE_URL || 'http://localhost:8086'
   },
   head: {
-    title: 'nuxt-typescript-starter',
+    title: 'Neptune',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' }
+      { hid: 'description', name: 'description', content: 'Neptune' }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
