@@ -25,16 +25,16 @@
           </i-button>
         </div>
         <div class="layout-breadcrumb">
-          <Breadcrumb>
+          <!-- <Breadcrumb>
             <Breadcrumb-item
               v-for="r in this.$route.matched"
               :key="r.name"
               :href="r.path"
             >{{ r.meta.label }}</Breadcrumb-item>
-          </Breadcrumb>
+          </Breadcrumb> -->
         </div>
         <div class="layout-content">
-          <router-view></router-view>
+          <nuxt></nuxt>
         </div>
         <div class="layout-copy">
           2017 &copy; SaaSPower
@@ -43,14 +43,15 @@
     </Row>
   </div>
 </template>
+
 <script lang="ts">
 import Vue from 'vue'
-import Component from 'vue-class-component'
+import Component from 'nuxt-class-component'
 
 @Component({
-  name: 'app'
+  name: 'default'
 })
-export default class App extends Vue {
+export default class Default extends Vue {
   spanLeft: number = 5
   spanRight: number = 19
 
@@ -59,7 +60,8 @@ export default class App extends Vue {
   }
 
   get breadcrumbs () {
-    return this.$route.matched.map(m => m.meta.label)
+    return ''
+    // return this.$route.matched.map(m => m.meta.label)
   }
 
   toggleClick () {
@@ -74,8 +76,8 @@ export default class App extends Vue {
 }
 </script>
 
-<style lang="scss" scoped>
-@import './styles/variables.scss';
+<style lang="scss">
+@import '../styles/variables.scss';
 
 .layout {
   width: 100%;
